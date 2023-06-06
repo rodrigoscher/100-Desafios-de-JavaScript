@@ -1,0 +1,1 @@
+// Faça um programa que leia uma matriz m x n, indicando o local onde há minas de um jogo de campo minado (sendo 0 para campo neutro, e 1 para locais onde haveria minas), e o programa deveria retornar uma matriz indicando, para cada posição, o número de minas nas casas vizinhas.
