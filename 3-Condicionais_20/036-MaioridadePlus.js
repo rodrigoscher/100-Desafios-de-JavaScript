@@ -1,0 +1,1 @@
+// Faça um programa que leia a idade de três pessoas e informe se alguma delas é maior de idade (idade maior ou igual a 18), se todas são maiores de idade, ou se todas são menores de idade (idade inferior a 18 anos).
