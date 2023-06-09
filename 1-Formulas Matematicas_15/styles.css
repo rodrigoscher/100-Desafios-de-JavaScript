@@ -5,26 +5,30 @@
   }
   :root {
     --cor-de-fundo: #353941;
-    --cor-primaria: #90b8f8;
+    --cor-primaria: #c4d7f7;
     --cor-secundaria: #5f85db;
     --cor-terciaria: #26282b;
   }
 
   body {
+    background-image: url(../tecnologia-com-fundo-azul-escuro-vetor.jpg);
     background-color: var(--cor-de-fundo);
     font-family: "Roboto", sans-serif;
     color: var(--cor-primaria);
+    
   }
 
   .cabecalho {
     padding: 2rem;
     margin: 1rem;
     text-align: center;
+    text-shadow: 0 0 10px #0000FF, 0 0 20px #0000FF, 0 0 30px #0000FF, 0 0 40px #0000FF, 0 0 50px #0000FF, 0 0 60px #0000FF, 0 0 70px #0000FF; /* Adiciona várias camadas de sombra */
   }
 
   .descricao__cabecalho {
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
+    font-size: 1.2rem;
   }
 
   .container {
@@ -75,7 +79,7 @@
     height: 400px;
     margin: 20px auto 20px auto;
     background-color: #fff;
-    border: solid 2px var(--cor-secundaria);
+    border: solid 3px var(--cor-secundaria);
     padding: 20px;
     border-radius: 10px;
   }
@@ -93,6 +97,7 @@
 
   #resultado p {
     padding: 10px;
+    
   }
 
   #resultado p strong {

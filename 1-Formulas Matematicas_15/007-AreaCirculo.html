@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    
+
+    <title>Exercício 007</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>007 - Calculadora de Área (círculo)</h1>
+      <hr />
+      <p class="descricao__cabecalho">Escreva um programa que calcule a área de um círculo a partir do raio, utilizando a fórmula A = π r²</p>
+    </header>
+
+    <main class="container">
+      <form id="formulario">
+        <label for="input1">Raio:</label>
+        <input type="text" id="input1" />
+
+        <button
+          class="botao__formulario"
+          type="button"
+          onclick="calcularResultado()"
+        >
+          Enviar
+        </button>
+      </form>
+    </main>
+
+    <section class="container__resultado">
+      <h2 class="titulo__resultado">Resultado:</h2>
+      <div id="resultado"></div>
+    </section>
+
+    <script>
+      function calcularResultado() {
+        let raio = parseFloat(document.getElementById("input1").value);
+        
+        let area = (Math.PI * raio * raio).toFixed(2);
+
+        let resultadoHTML = document.getElementById("resultado");
+        resultadoHTML.innerHTML = `<p>Considerando os valores fornecidos, a área do círculo calculada é <strong>${
+          area}</strong>.</p>`;
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    
+
+    <title>Exercício 005</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>005 - Calculadora de IMC</h1>
+      <hr />
+      <p class="descricao__cabecalho">Escreva um programa que calcule o IMC de um indivíduo, utilizando a formula IMC = peso /altura².</p>
+    </header>
+
+    <main class="container">
+      <form id="formulario">
+        <label for="input1">Peso(kg):</label>
+        <input type="text" id="input1" />
+
+        <label for="input2">Altura(m):</label>
+        <input type="text" id="input2" />
+
+        <button
+          class="botao__formulario"
+          type="button"
+          onclick="calcularResultado()"
+        >
+          Enviar
+        </button>
+      </form>
+    </main>
+
+    <section class="container__resultado">
+      <h2 class="titulo__resultado">Resultado:</h2>
+      <div id="resultado"></div>
+    </section>
+
+    <script>
+      function calcularResultado() {
+        let peso = parseFloat(document.getElementById("input1").value);
+        let altura = parseFloat(document.getElementById("input2").value);
+        
+        let imc = (peso/(altura * altura)).toFixed(2);
+
+        let resultadoHTML = document.getElementById("resultado");
+        resultadoHTML.innerHTML = `<p>Considerando os valores fornecidos, o IMC calculado é <strong>${
+          imc}</strong>.</p>`;
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    
+
+    <title>Exercício 002</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>002 - Média</h1>
+      <hr />
+      <p class="descricao__cabecalho">Escreva um programa que calcule a média aritmética de dois números.</p>
+    </header>
+
+    <main class="container">
+      <form id="formulario">
+        <label for="input1">Número 1:</label>
+        <input type="text" id="input1" />
+
+        <label for="input2">Número 2:</label>
+        <input type="text" id="input2" />
+
+        <button
+          class="botao__formulario"
+          type="button"
+          onclick="calcularResultado()"
+        >
+          Enviar
+        </button>
+      </form>
+    </main>
+
+    <section class="container__resultado">
+      <h2 class="titulo__resultado">Resultado:</h2>
+      <div id="resultado"></div>
+    </section>
+
+    <script>
+      function calcularResultado() {
+        let num1 = parseFloat(document.getElementById("input1").value);
+        let num2 = parseFloat(document.getElementById("input2").value);
+
+        let media = (num1 + num2)/2
+
+        let resultadoHTML = document.getElementById("resultado");
+        resultadoHTML.innerHTML = `<p>A média entre os dois números fornecidos é <strong>${
+          media}</strong>.</p>`;
+      }
+    </script>
+  </body>
+</html>
+
