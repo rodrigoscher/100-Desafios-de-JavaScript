@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    
+
+    <title>Exercício 001</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>001 - Operações básicas</h1>
+      <hr />
+      <p class="descricao__cabecalho">Escreva um programa que solicite ao usuário dois números e exiba a soma, subtração, multiplicação e divisão entre eles.</p>
+    </header>
+
+    <main class="container">
+      <form id="formulario">
+        <label for="input1">Número 1:</label>
+        <input type="text" id="input1" />
+
+        <label for="input2">Número 2:</label>
+        <input type="text" id="input2" />
+
+        <button
+          class="botao__formulario"
+          type="button"
+          onclick="calcularResultado()"
+        >
+          Enviar
+        </button>
+      </form>
+    </main>
+
+    <section class="container__resultado">
+      <h2 class="titulo__resultado">Resultado:</h2>
+      <div id="resultado"></div>
+    </section>
+
+    <script>
+      function calcularResultado() {
+        let num1 = parseFloat(document.getElementById("input1").value);
+        let num2 = parseFloat(document.getElementById("input2").value);
+
+        let resultadoHTML = document.getElementById("resultado");
+        resultadoHTML.innerHTML = `<p>A soma entre os dois números fornecidos é <strong>${
+          num1 + num2}</strong>.</p>
+        
+        
+          <p>A subtração entre o primeiro número e o segundo é <strong>${
+            num1 - num2}</strong>. Já entre o segundo número e o primeiro é <strong>${num2 - num1}</strong>.</p>
+        
+        <p>A multiplicação entre eles resulta em <strong>${num1 * num2}</strong>.</p>
+        
+          <p>A divisão do primeiro pelo segundo é <strong>${
+            num1 / num2}</strong>. Do segundo pelo primeiro, <strong>${num2 / num1}</strong>.</p>`;
+      }
+    </script>
+  </body>
+</html>
