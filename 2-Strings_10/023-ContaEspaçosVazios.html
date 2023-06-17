@@ -6,25 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
 
-    <title>Exercício 005</title>
+    <title>Exercício 023</title>
   </head>
   <body>
     <header class="cabecalho">
-      <h1>005 - Calculadora de IMC</h1>
+      <h1>023 - Conta Espaços Vazios</h1>
       <hr />
       <p class="descricao__cabecalho">
-        Escreva um programa que calcule o IMC de um indivíduo, utilizando a
-        formula IMC = peso /altura².
+        Faça um programa que receba uma frase e exiba a quantidade de espaços em branco presentes na frase.
       </p>
     </header>
 
     <main class="container">
-      <form id="formulario">
-        <label for="input1">Peso(kg):</label>
+      <form id="formulario" class="formulario__container">
+        <label for="input1">Palavra:</label>
         <input type="text" id="input1" />
-
-        <label for="input2">Altura(m):</label>
-        <input type="text" id="input2" />
 
         <button
           class="botao__formulario"
@@ -43,14 +39,26 @@
 
     <script>
       function calcularResultado() {
-        let peso = parseFloat(document.getElementById("input1").value);
-        let altura = parseFloat(document.getElementById("input2").value);
-
-        let imc = (peso / (altura * altura)).toFixed(2);
-
+        let fraseFornecida = document.getElementById("input1").value;
+        
+        let contaEspacosVazios = fraseFornecida.match(/[ ]/g).length;
+        
         let resultadoHTML = document.getElementById("resultado");
-        resultadoHTML.innerHTML = `<p>Considerando os valores fornecidos, o IMC calculado é <strong>${imc}</strong>.</p>`;
-      }
+            resultadoHTML.innerHTML = `<p> <strong> ${contaEspacosVazios}</Strong>.`;
+        }
+
     </script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+<!-- 
+let fraseFornecida = "Rodrigo Scher Soares";
+let quantidadeDeEspacos = fraseFornecida.match(/[ ]/g).length;
+console.log(quantidadeDeEspacos); -->

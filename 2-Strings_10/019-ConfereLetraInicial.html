@@ -6,25 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
 
-    <title>Exercício 016</title>
+    <title>Exercício 019</title>
   </head>
   <body>
     <header class="cabecalho">
-      <h1>016 - Concatena strings</h1>
+      <h1>019 - Confere letra inicial</h1>
       <hr />
       <p class="descricao__cabecalho">
-        Crie um programa que leia duas palavras e as concatene, exibindo a
-        palavra resultante.
+        Escreva um programa que receba um nome e verifique se o mesmo começa com
+        a letra “a”.
       </p>
     </header>
 
     <main class="container">
       <form id="formulario" class="formulario__container">
-        <label for="input1">Palavra 1:</label>
+        <label for="input1">String:</label>
         <input type="text" id="input1" />
-
-        <label for="input2">Palavra 2:</label>
-        <input type="text" id="input2" />
 
         <button
           class="botao__formulario"
@@ -42,15 +39,23 @@
     </section>
 
     <script>
-        function calcularResultado() { 
+      function calcularResultado() {
         let palavra1 = document.getElementById("input1").value;
-        let palavra2 = document.getElementById("input2").value;
-    
-        let resultadoJuncao = palavra1 + " " + palavra2
 
-        let resultadoHTML = document.getElementById("resultado");
-        resultadoHTML.innerHTML = `<p>A junção das palavras fornecidas é: <strong>${resultadoJuncao}</strong>.</p>`
-        }
+        const resultadoPrimeiraLetra = (palavra) => {
+          if (palavra.charAt(0) == "a" || palavra.charAt(0) == "A") {
+            let resultadoHTML = document.getElementById("resultado");
+            resultadoHTML.innerHTML = `<p>Positivo, a primeira letra da palavra fornecida é <strong>"A"</strong>.</p>`;
+          } else {
+            let resultadoHTML = document.getElementById("resultado");
+            resultadoHTML.innerHTML = `<p>Negativo, a primeira letra da palavra fornecida é <strong>${palavra.charAt(0)}</strong>, <strong>diferente de "A"</strong>.</p>`;
+          }
+        };
+        resultadoPrimeiraLetra(palavra1);
+      }
+
+
     </script>
   </body>
 </html>
+

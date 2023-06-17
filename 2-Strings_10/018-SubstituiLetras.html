@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -6,25 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
 
-    <title>Exercício 005</title>
+    <title>Exercício 018</title>
   </head>
   <body>
     <header class="cabecalho">
-      <h1>005 - Calculadora de IMC</h1>
+      <h1>018 - Substitui letras</h1>
       <hr />
-      <p class="descricao__cabecalho">
-        Escreva um programa que calcule o IMC de um indivíduo, utilizando a
-        formula IMC = peso /altura².
+      <p class="descricao__cabecalho">Crie um programa que receba uma frase e substitua todas as letras “a” por “e”.
       </p>
     </header>
 
     <main class="container">
-      <form id="formulario">
-        <label for="input1">Peso(kg):</label>
+      <form id="formulario" class="formulario__container">
+        <label for="input1">String:</label>
         <input type="text" id="input1" />
-
-        <label for="input2">Altura(m):</label>
-        <input type="text" id="input2" />
 
         <button
           class="botao__formulario"
@@ -42,15 +39,14 @@
     </section>
 
     <script>
-      function calcularResultado() {
-        let peso = parseFloat(document.getElementById("input1").value);
-        let altura = parseFloat(document.getElementById("input2").value);
-
-        let imc = (peso / (altura * altura)).toFixed(2);
+        function calcularResultado() { 
+        let palavra1 = document.getElementById("input1").value;
+       
+        let palavraResultado = palavra1.replace(/a/g, "e");
 
         let resultadoHTML = document.getElementById("resultado");
-        resultadoHTML.innerHTML = `<p>Considerando os valores fornecidos, o IMC calculado é <strong>${imc}</strong>.</p>`;
-      }
+        resultadoHTML.innerHTML = `<p>A substituição proposta resulta na palavra <strong>${palavraResultado}</strong>.</p>`
+        }
     </script>
   </body>
 </html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Exercício 020</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>020 - Palíndromo</h1>
+      <hr />
+      <p class="descricao__cabecalho">
+        Faça um programa que leia uma palavra e verifique se a mesma é palíndromo (se pode ser lida da mesma forma de trás para frente).
+      </p>
+    </header>
+
+    <main class="container">
+      <form id="formulario" class="formulario__container">
+        <label for="input1">String:</label>
+        <input type="text" id="input1" />
+
+        <button
+          class="botao__formulario"
+          type="button"
+          onclick="calcularResultado()"
+        >
+          Enviar
+        </button>
+      </form>
+    </main>
+
+    <section class="container__resultado">
+      <h2 class="titulo__resultado">Resultado:</h2>
+      <div id="resultado"></div>
+    </section>
+
+    <script>
+      function calcularResultado() {
+        let palavraFornecida = document.getElementById("input1").value.toUpperCase();
+        let palavraInvertida =  palavraFornecida.split("").reverse().join("");
+
+        const resultadoVerificado = () => {
+          if (palavraFornecida === palavraInvertida) {
+            let resultadoHTML = document.getElementById("resultado");
+            resultadoHTML.innerHTML = `<p>Positivo, a palavra <b>${palavraFornecida}</b> é <strong>"PALÍNDROMO"</strong>.</p>`;
+          } else {
+            let resultadoHTML = document.getElementById("resultado");
+            resultadoHTML.innerHTML = `<p>Negativo, a palavra <b>${palavraFornecida}</b> <strong>NÃO É</strong> palíndromo.</p>`;
+          }
+        };
+        resultadoVerificado();
+      }
+
+
+    </script>
+  </body>
+</html>
+
